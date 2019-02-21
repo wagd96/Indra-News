@@ -3,4 +3,5 @@ export interface News {
     body: string;
     headLine: string;
     summary?: string;
+    date:string;
 }

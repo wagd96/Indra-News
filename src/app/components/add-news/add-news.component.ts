@@ -16,7 +16,8 @@ export class AddNewsComponent implements OnInit {
   news: News = {
     body: '',
     headLine: '',
-    summary: ''
+    summary: '',
+    date:''
   }
 
   
@@ -46,7 +47,8 @@ export class AddNewsComponent implements OnInit {
     this.news.body = this.newsAddForm.get('body').value;
     this.news.headLine = this.newsAddForm.get('headLine').value;
     this.news.summary = this.newsAddForm.get('summary').value;
- 
+    const date = new Date();
+    this.news.date = date.getDate()+'-'+ date.getMonth() +'-'+ date.getFullYear();
     this.firebaseService.addNews(this.news);
 
     this.newsAddForm.reset();
