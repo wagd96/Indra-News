@@ -7,5 +7,6 @@ export const environment = {
     projectId: "indranews-a2dca",
     storageBucket: "indranews-a2dca.appspot.com",
     messagingSenderId: "764495305563"
+
   }
 };

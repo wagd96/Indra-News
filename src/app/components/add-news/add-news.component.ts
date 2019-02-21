@@ -16,7 +16,8 @@ export class AddNewsComponent implements OnInit {
   news: News = {
     body: '',
     headLine: '',
-    summary: ''
+    summary: '',
+    //date:''
   }
 
   
@@ -29,7 +30,8 @@ export class AddNewsComponent implements OnInit {
     this.newsAddForm = this.fb.group({
       body: ['', Validators.required ],
       headLine: ['', Validators.required ],
-      summary: ['', Validators.required ]
+      summary: ['', Validators.required ],
+      //date: ['']
     });
   }
 
@@ -46,9 +48,9 @@ export class AddNewsComponent implements OnInit {
     this.news.body = this.newsAddForm.get('body').value;
     this.news.headLine = this.newsAddForm.get('headLine').value;
     this.news.summary = this.newsAddForm.get('summary').value;
- 
-    this.firebaseService.addNews(this.news);
-
+    //const dateDay = new Date();
+    //this.news.date = dateDay.getDate() +'/'+(dateDay.getMonth()+1)+'/'+dateDay.getFullYear(); 
+    
     this.newsAddForm.reset();
     
   }
